@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacts — Le Labyrinthe En Champ-Thé</title>
+  <title>Le Labyrinthe En Champ-Thé — Contact & Informations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 28px 16px;
+      padding: 24px 16px;
     }
 
     .card {
@@ -39,7 +39,7 @@
       width: 100%;
       max-width: 440px;
       border-radius: 24px;
-      padding: 36px 24px 28px;
+      padding: 34px 24px 26px;
       box-shadow: var(--ombre);
       border: 1px solid var(--bordure);
       text-align: center;
@@ -76,103 +76,117 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.7rem;
+      font-size: 1.65rem;
       font-weight: 600;
       color: var(--vert-foret);
       margin-bottom: 6px;
+      line-height: 1.25;
     }
 
-    .subtitle {
-      font-size: 0.92rem;
+    .tagline {
+      font-size: 0.9rem;
       color: var(--gris-texte);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
-    /* Sélecteur de profil */
-    .profiles-list {
+    /* Bouton principal vCard */
+    .btn-save {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background-color: var(--vert-foret);
+      color: var(--blanc);
+      border: none;
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(35, 56, 39, 0.25);
+      transition: all 0.2s ease;
+      margin-bottom: 22px;
+    }
+
+    .btn-save:hover {
+      background-color: var(--vert-hover);
+      transform: translateY(-1px);
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--dore);
+      margin: 18px 0 10px;
+      text-align: left;
+    }
+
+    .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
     }
 
-    .profile-card {
+    .person-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 18px;
+      padding: 12px 14px;
       background: #FAFAF7;
       border: 1px solid var(--bordure);
-      border-radius: 14px;
+      border-radius: 12px;
       text-decoration: none;
       color: var(--texte);
       text-align: left;
       transition: all 0.2s ease;
     }
 
-    .profile-card:hover {
+    .person-card:hover {
       background: var(--dore-light);
       border-color: var(--dore);
-      transform: translateY(-2px);
     }
 
-    .profile-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .profile-name {
-      font-weight: 700;
-      font-size: 1.05rem;
+    .person-name {
+      font-weight: 600;
+      font-size: 0.95rem;
       color: var(--vert-foret);
     }
 
-    .profile-role {
-      font-size: 0.82rem;
+    .person-role {
+      font-size: 0.8rem;
       color: var(--gris-texte);
-      line-height: 1.3;
-    }
-
-    .arrow-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--blanc);
-      border: 1px solid var(--bordure);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-left: 12px;
     }
 
     .arrow-icon svg {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       fill: var(--vert-foret);
     }
 
-    /* Liens secondaires */
-    .site-link {
-      display: inline-flex;
+    .site-btn {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--vert-foret);
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      background: #FFFFFF;
+      border: 1px solid var(--bordure);
+      border-radius: 12px;
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: opacity 0.2s ease;
+      color: var(--vert-foret);
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-top: 6px;
+      transition: background 0.2s ease;
     }
 
-    .site-link:hover {
-      opacity: 0.8;
-      text-decoration: underline;
+    .site-btn:hover {
+      background: #F4F1EB;
     }
 
-    /* Barre sociale */
     .social-row {
       display: flex;
       justify-content: center;
@@ -205,10 +219,10 @@
     }
 
     .footer-address {
-      margin-top: 22px;
+      margin-top: 20px;
       font-size: 0.8rem;
       color: var(--gris-texte);
-      line-height: 1.45;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -224,41 +238,48 @@
 
     <span class="badge-terroir">Grand Coude • Agriculture Biologique</span>
     <h1>Le Labyrinthe En Champ-Thé</h1>
-    <p class="subtitle">Sélectionnez votre interlocuteur :</p>
+    <p class="tagline">Plantation de thé & agrotourisme à La Réunion</p>
 
-    <!-- Liste des profils -->
-    <div class="profiles-list">
-      <!-- Johny -->
-      <a class="profile-card" href="johny.html">
-        <div class="profile-info">
-          <span class="profile-name">Johny GUICHARD</span>
-          <span class="profile-role">Chef d'exploitation</span>
+    <!-- Bouton vCard Entreprise -->
+    <button class="btn-save" onclick="downloadCompanyVCard()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+        <polyline points="17 21 17 13 7 13 7 21"></polyline>
+        <polyline points="7 3 7 8 15 8"></polyline>
+      </svg>
+      Enregistrer l'entreprise
+    </button>
+
+    <!-- Vos fiches individuelles -->
+    <div class="section-title">Vos interlocuteurs</div>
+    <div class="contact-links">
+      <a class="person-card" href="johny.html">
+        <div>
+          <div class="person-name">Johny GUICHARD</div>
+          <div class="person-role">Chef d'exploitation • Direction</div>
         </div>
         <div class="arrow-icon">
           <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
         </div>
       </a>
 
-      <!-- Inès -->
-      <a class="profile-card" href="ines.html">
-        <div class="profile-info">
-          <span class="profile-name">Inès GUICHARD</span>
-          <span class="profile-role">Responsable marketing & management opérationnel</span>
+      <a class="person-card" href="ines.html">
+        <div>
+          <div class="person-name">Inès GUICHARD</div>
+          <div class="person-role">Marketing & Management opérationnel</div>
         </div>
         <div class="arrow-icon">
           <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
         </div>
       </a>
-    </div>
 
-    <!-- Lien site internet -->
-    <div>
-      <a class="site-link" href="https://enchampthe.com" target="_blank" rel="noopener">
-        🌐 Visiter enchampthe.com
+      <!-- Lien Site -->
+      <a class="site-btn" href="https://enchampthe.com" target="_blank" rel="noopener">
+        🌐 Découvrir le site web (enchampthe.com)
       </a>
     </div>
 
-    <!-- Réseaux Sociaux -->
+    <!-- Réseaux Sociaux Officiels -->
     <div class="social-row">
       <a class="social-btn" href="https://re.linkedin.com/company/le-labyrinthe-en-champ-th%C3%A9" target="_blank" rel="noopener" title="LinkedIn">
         <svg viewBox="0 0 24 24" fill="#0A66C2">
@@ -285,5 +306,30 @@
     </div>
   </div>
 
+  <script>
+    function downloadCompanyVCard() {
+      const vcardData = 
+`BEGIN:VCARD
+VERSION:3.0
+FN:Le Labyrinthe En Champ-Thé
+ORG:Le Labyrinthe En Champ-Thé
+TITLE:Plantation & Agrotourisme
+TEL;TYPE=WORK,VOICE:+262692505759
+EMAIL;TYPE=WORK,INTERNET:communication@enchampthe.com
+URL;TYPE=WORK:https://enchampthe.com
+ADR;TYPE=WORK:;;18 rue Emile Mussard\\, Grand Coude;Saint-Joseph;;97480;La Réunion
+NOTE:Agriculture biologique & agrotourisme à Grand Coude\\, La Réunion.\\nJohny Guichard : +262 692 52 30 94 / direction@enchampthe.com\\nInès Guichard : +262 692 50 57 59 / communication@enchampthe.com
+END:VCARD`;
+
+      const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'le-labyrinthe-en-champ-the.vcf');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
 </body>
 </html>
