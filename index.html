@@ -168,7 +168,7 @@
 
     /* Cartes personnes (Johny & Inès) */
     .person-card {
-      padding: 14px 14px 12px;
+      padding: 12px 14px;
       background: #FFFFFF;
       border: 1px solid var(--bordure);
       border-radius: 14px;
@@ -181,74 +181,73 @@
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .person-name {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--vert-foret);
     }
 
     .person-role {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--gris-texte);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .person-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
+      padding-top: 8px;
+      border-top: 1px solid #F0EEEA;
     }
 
-    .btn-quick-call {
-      flex: 1;
+    /* Numéro discret sous forme de texte fin */
+    .btn-discrete-call {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 6px;
-      padding: 8px 10px;
-      background: #FAFAF7;
-      border: 1px solid var(--bordure);
-      border-radius: 8px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--vert-foret);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #8C968D;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: color 0.2s ease;
     }
 
-    .btn-quick-call:hover {
-      background: var(--vert-foret);
-      color: var(--blanc);
-      border-color: var(--vert-foret);
+    .btn-discrete-call:hover {
+      color: var(--vert-foret);
+      text-decoration: underline;
     }
 
-    .btn-quick-call svg {
-      width: 14px;
-      height: 14px;
+    .btn-discrete-call svg {
+      width: 12px;
+      height: 12px;
       fill: currentColor;
+      opacity: 0.8;
     }
 
+    /* Lien fiche profil */
     .btn-profile-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 12px;
-      background: transparent;
+      padding: 5px 10px;
+      background: #FAFAF7;
       border: 1px solid var(--bordure);
-      border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 500;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 600;
       color: var(--gris-texte);
       text-decoration: none;
       transition: all 0.2s ease;
     }
 
     .btn-profile-link:hover {
-      background: #F1EFEA;
-      color: var(--texte);
+      background: var(--vert-foret);
+      color: var(--blanc);
+      border-color: var(--vert-foret);
     }
 
     /* Bouton Site Web */
@@ -355,7 +354,7 @@
       </a>
     </div>
 
-    <!-- Vos numéros directs bien visibles -->
+    <!-- Direction / Équipe -->
     <div class="section-title">Contacts Directs</div>
 
     <!-- Johny GUICHARD -->
@@ -365,11 +364,11 @@
       </div>
       <div class="person-role">Chef d'exploitation</div>
       <div class="person-actions">
-        <a class="btn-quick-call" href="tel:+262692523094">
+        <a class="btn-discrete-call" href="tel:+262692523094">
           <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           0692 52 30 94
         </a>
-        <a class="btn-profile-link" href="johny.html">Fiche complète →</a>
+        <a class="btn-profile-link" href="johny.html">Fiche profil →</a>
       </div>
     </div>
 
@@ -380,11 +379,11 @@
       </div>
       <div class="person-role">Marketing & Management opérationnel</div>
       <div class="person-actions">
-        <a class="btn-quick-call" href="tel:+262692505759">
+        <a class="btn-discrete-call" href="tel:+262692505759">
           <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           0692 50 57 59
         </a>
-        <a class="btn-profile-link" href="ines.html">Fiche complète →</a>
+        <a class="btn-profile-link" href="ines.html">Fiche profil →</a>
       </div>
     </div>
 
