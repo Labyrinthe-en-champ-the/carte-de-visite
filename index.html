@@ -89,7 +89,14 @@
       margin-bottom: 20px;
     }
 
-    /* Bouton principal vCard */
+    /* Actions principales : vCard & Partage */
+    .top-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
     .btn-save {
       display: flex;
       align-items: center;
@@ -99,19 +106,40 @@
       background-color: var(--vert-foret);
       color: var(--blanc);
       border: none;
-      padding: 14px 18px;
+      padding: 13px 18px;
       border-radius: 12px;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 600;
       cursor: pointer;
       box-shadow: 0 4px 14px rgba(35, 56, 39, 0.22);
       transition: all 0.2s ease;
-      margin-bottom: 20px;
     }
 
     .btn-save:hover {
       background-color: var(--vert-hover);
       transform: translateY(-1px);
+    }
+
+    .btn-share {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: #FAFAF7;
+      color: var(--vert-foret);
+      border: 1px solid var(--bordure);
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-share:hover {
+      background: var(--dore-light);
+      border-color: var(--dore);
     }
 
     .section-title {
@@ -204,7 +232,6 @@
       border-top: 1px solid #F0EEEA;
     }
 
-    /* Numéro discret sous forme de texte fin */
     .btn-discrete-call {
       display: inline-flex;
       align-items: center;
@@ -228,7 +255,6 @@
       opacity: 0.8;
     }
 
-    /* Lien fiche profil */
     .btn-profile-link {
       display: inline-flex;
       align-items: center;
@@ -326,15 +352,30 @@
     <h1>Le Labyrinthe En Champ-Thé</h1>
     <p class="tagline">Plantation de thé & agrotourisme à La Réunion</p>
 
-    <!-- Bouton vCard Entreprise -->
-    <button class="btn-save" onclick="downloadCompanyVCard()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
-        <polyline points="17 21 17 13 7 13 7 21"></polyline>
-        <polyline points="7 3 7 8 15 8"></polyline>
-      </svg>
-      Enregistrer tous les contacts
-    </button>
+    <!-- Zone Actions : Enregistrer & Partager -->
+    <div class="top-actions">
+      <!-- Bouton vCard Entreprise -->
+      <button class="btn-save" onclick="downloadCompanyVCard()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+          <polyline points="17 21 17 13 7 13 7 21"></polyline>
+          <polyline points="7 3 7 8 15 8"></polyline>
+        </svg>
+        Enregistrer tous les contacts
+      </button>
+
+      <!-- Nouveau Bouton de Partage rapide -->
+      <button class="btn-share" onclick="partagerPage()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+        Partager cette page
+      </button>
+    </div>
 
     <!-- Pôle Accueil / Opérationnel -->
     <div class="section-title">Accueil & Réservations</div>
@@ -354,7 +395,7 @@
       </a>
     </div>
 
-    <!-- Direction / Équipe -->
+    <!-- Contacts Directs -->
     <div class="section-title">Contacts Directs</div>
 
     <!-- Johny GUICHARD -->
@@ -420,6 +461,23 @@
   </div>
 
   <script>
+    // Fonction de partage natif (WhatsApp, SMS, AirDrop, etc.)
+    function partagerPage() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Le Labyrinthe En Champ-Thé — Contacts',
+          text: 'Retrouvez nos contacts directs et réservations du Labyrinthe En Champ-Thé :',
+          url: window.location.href
+        }).catch((error) => console.log('Partage annulé'));
+      } else {
+        // Alternative si le navigateur ne gère pas le partage natif (ex: PC de bureau)
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          alert('Lien de la page copié dans le presse-papiers !');
+        });
+      }
+    }
+
+    // Téléchargement vCard
     function downloadCompanyVCard() {
       const vcardData = 
 `BEGIN:VCARD
